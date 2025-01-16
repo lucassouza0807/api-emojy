@@ -4,32 +4,35 @@ FROM golang:1.23-alpine AS builder
 # Defina o diretório de trabalho
 WORKDIR /app
 
-# Copie o arquivo go.mod e go.sum para a construção
+# Copiar arquivos de dependências
 COPY go.mod go.sum ./
 
-# Baixe as dependências
+# Baixar as dependências
 RUN go mod tidy
 
-# Copie o restante do código para o diretório de trabalho
+# Copiar o restante do código
 COPY . .
 
-# Compile o binário Go, especificando o arquivo index.go
+# Compilar o binário Go
 RUN go build -o app ./index.go
 
 # Etapa 2: Produção
 FROM alpine:latest
 
-# Instale dependências mínimas (se necessário)
+# Instale dependências mínimas
 RUN apk --no-cache add ca-certificates
 
 # Defina o diretório de trabalho
 WORKDIR /root/
 
-# Copie o binário compilado da etapa de build
+# Copiar o binário compilado
 COPY --from=builder /app/app .
 
-# Exponha a porta em que o app irá rodar (por exemplo, 8080)
+# Copiar o arquivo .env para o diretório de trabalho
+COPY .env /root/.env
+
+# Expor a porta
 EXPOSE 8080
 
-# Comando para rodar o aplicativo Go
+# Comando para rodar o aplicativo
 CMD ["./app"]
