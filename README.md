@@ -77,9 +77,36 @@ Isso irá baixar todas as dependências mencionadas no `go.mod`.
 
 ### 3. **Get Phrases**
    - **Método**: GET
-   - **URL**: `http://localhost:8080/api/v1/phrases`
-   - **Descrição**: Obtém as frases do usuário via token.
+   - **URL**: `http://localhost:8080/api/v1/phrases?page=1`
+   - **Descrição**: Obtém as frases de forma paginada do usuário via token caso passe nenhum parâmetros na queryString vai retornar a primeira pagina .
    - **Autorização**: Bearer Token
+ - **Body**:
+     ```json
+   
+    "current_page": "1",
+    "data": [
+        {
+            "ID": 2,
+            "CreatedAt": "2025-01-16T20:17:19.176Z",
+            "UpdatedAt": "2025-01-16T20:17:19.176Z",
+            "DeletedAt": null,
+            "original_phrase": "cachorro",
+            "emojified_phrase": "🐶",
+            "user_id": 1
+        },
+        {
+            "ID": 1,
+            "CreatedAt": "2025-01-16T20:16:55.818Z",
+            "UpdatedAt": "2025-01-16T20:16:55.818Z",
+            "DeletedAt": null,
+            "original_phrase": "gato",
+            "emojified_phrase": "🐱",
+            "user_id": 1
+        }
+    ],
+    "last_page": 1
+}
+     ```
    - **Exemplo de Header Authorization**:
      ```
      Authorization: Bearer <your_token_here>
@@ -94,8 +121,8 @@ Isso irá baixar todas as dependências mencionadas no `go.mod`.
    - **Body**:
      ```json
      {
-       "original_phrase": "gato dasd",
-       "emojified_phrase": "gato teste"
+       "original_phrase": "gato",
+       "emojified_phrase": "🐱"
      }
      ```
 
@@ -106,8 +133,8 @@ Isso irá baixar todas as dependências mencionadas no `go.mod`.
    - **Body**:
      ```json
      {
-       "original_phrase": "sdas",
-       "emojified_phrase": "adasdsa"
+       "original_phrase": "gato",
+       "emojified_phrase": "🐱"
      }
      ```
 
