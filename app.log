@@ -32,3 +32,7 @@
 2025/01/14 14:53:39 db_config.go:33: Erro ao conectar ao banco de dados: Error 1040: Too many connections
 2025/01/14 21:35:38 db_config.go:33: Erro ao conectar ao banco de dados: Error 1040: Too many connections
 2025/01/14 21:35:43 db_config.go:33: Erro ao conectar ao banco de dados: Error 1040: Too many connections
+2025/01/16 16:11:24 db_config.go:33: Erro ao conectar ao banco de dados: Error 1045 (28000): Access denied for user 'localhost'@'localhost' (using password: NO)
+2025/01/16 16:11:36 db_config.go:33: Erro ao conectar ao banco de dados: Error 1045 (28000): Access denied for user 'localhost'@'localhost' (using password: YES)
+2025/01/16 16:11:47 db_config.go:33: Erro ao conectar ao banco de dados: Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+2025/01/16 16:19:38 db_config.go:17: Erro ao carregar o arquivo .env: open .env: O sistema não pode encontrar o arquivo especificado.
