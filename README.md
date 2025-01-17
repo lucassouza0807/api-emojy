@@ -176,8 +176,8 @@ Isso irá baixar todas as dependências mencionadas no `go.mod`.
       "CreatedAt": "2025-01-16T20:16:55.818Z",
       "UpdatedAt": "2025-01-16T20:16:55.818Z",
       "DeletedAt": null,
-      "original_phrase": "gato",
-      "emojified_phrase": "🐱",
+      "original_phrase": "gato falou com cachorro",
+      "emojified_phrase": "🐱 falou com 🐶"
       "user_id": 1
     }
   ],
