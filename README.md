@@ -145,44 +145,41 @@ Isso irá baixar todas as dependências mencionadas no `go.mod`.
    - **Parâmetros**:
      - `{id}`: ID da frase a ser deletada.
 
+
 ### 7. **Search Phrase**
-   - **Método**: GET
-   - **URL**: `http://localhost:8080/api/v1/search-phrase?query={query}`
-   - **Descrição**: Procura uma frase baseada no texto original.
-   - **Parâmetros**:
-     - `query`: Texto para buscar.
-   - **Exemplo de URL**: `http://localhost:8080/api/v1/search-phrase?query=frase`
--**Body**:
-     ```json
-   {
-    "current_page": "1",
-    "data": [
-        {
-            "ID": 2,
-            "CreatedAt": "2025-01-16T20:17:19.176Z",
-            "UpdatedAt": "2025-01-16T20:17:19.176Z",
-            "DeletedAt": null,
-            "original_phrase": "cachorro",
-            "emojified_phrase": "🐶",
-            "user_id": 1
-        },
-        {
-            "ID": 1,
-            "CreatedAt": "2025-01-16T20:16:55.818Z",
-            "UpdatedAt": "2025-01-16T20:16:55.818Z",
-            "DeletedAt": null,
-            "original_phrase": "gato",
-            "emojified_phrase": "🐱",
-            "user_id": 1
-        }
-    ],
-    "last_page": 1
+- **Método**: GET  
+- **URL**: `http://localhost:8080/api/v1/search-phrase?query={query}`  
+- **Descrição**: Procura uma frase baseada no texto original.  
+- **Parâmetros**:  
+  - `query`: Texto para buscar.  
+- **Exemplo de URL**:  
+  `http://localhost:8080/api/v1/search-phrase?query=gato`  
+- **Autorização**: Bearer Token  
+- **Exemplo de Header Authorization**:
+
+- **Resposta (Exemplo)**:  
+```json
+{
+  "current_page": "1",
+  "data": [
+    {
+      "ID": 2,
+      "CreatedAt": "2025-01-16T20:17:19.176Z",
+      "UpdatedAt": "2025-01-16T20:17:19.176Z",
+      "DeletedAt": null,
+      "original_phrase": "cachorro",
+      "emojified_phrase": "🐶",
+      "user_id": 1
+    },
+    {
+      "ID": 1,
+      "CreatedAt": "2025-01-16T20:16:55.818Z",
+      "UpdatedAt": "2025-01-16T20:16:55.818Z",
+      "DeletedAt": null,
+      "original_phrase": "gato",
+      "emojified_phrase": "🐱",
+      "user_id": 1
+    }
+  ],
+  "last_page": 1
 }
-     ```
-   - **Exemplo de Header Authorization**:
-     ```
-     Authorization: Bearer <your_token_here>
-     ```
-
-
-
