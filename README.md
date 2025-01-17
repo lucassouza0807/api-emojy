@@ -154,7 +154,7 @@ Isso irá baixar todas as dependências mencionadas no `go.mod`.
    - **Exemplo de URL**: `http://localhost:8080/api/v1/search-phrase?query=frase`
 -**Body**:
      ```json
-   
+   {
     "current_page": "1",
     "data": [
         {
