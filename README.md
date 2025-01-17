@@ -30,7 +30,7 @@ Isso irá baixar todas as dependências mencionadas no `go.mod`.
 1. Para rodar a API localmente, execute o seguinte comando:
 
     ```bash
-    go run main.go
+    go run index.go
     ```
 
     Isso irá iniciar o servidor na porta padrão `8080`. Você pode acessar a API através de `http://localhost:8080`.
