@@ -153,7 +153,7 @@ Isso irá baixar todas as dependências mencionadas no `go.mod`.
 - **Parâmetros**:  
   - `query`: Texto para buscar.  
 - **Exemplo de URL**:  
-  `http://localhost:8080/api/v1/search-phrase?query=gato`  
+  `http://localhost:8080/api/v1/search-phrase?query=cachorro`  
 - **Autorização**: Bearer Token  
 - **Exemplo de Header Authorization**:
 
